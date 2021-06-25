@@ -42,6 +42,6 @@ if (isset($_GET['name']) && !empty($_GET['name']))
 				}
 			}
 		echo json_encode($All, JSON_PRETTY_PRINT);
-	  }
+	        }
 	}
 ?>
