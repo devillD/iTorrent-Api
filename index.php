@@ -1,14 +1,8 @@
 <?php
-
+																									 
 header("Access-Control-Allow-Origin: *");																			 
 header('Content-Type: application/json');
 error_reporting(E_ERROR | E_PARSE);
-
-function searchPicture($name){
-	
-	return 'none';
-	
-}
 
 if (isset($_GET['name']) && !empty($_GET['name']))
 	{
@@ -18,23 +12,9 @@ if (isset($_GET['name']) && !empty($_GET['name']))
 		$searchLength = 0;
 		$Arg = str_replace(" ", "+", $Arg);
 			{
-			if (isset($_GET['x1337pages']) && !empty($_GET['x1337pages']))
 				{
-				$pages = $_GET['x1337pages'];
-				}
-			  else
-				{
-				$pages = 1;
-				}
-
-			if ($pages < 1)
-				{
-				$pages = 1;
-				}
-
-			for ($b = 1; $b <= $pages; $b++)
-				{
-				$link = 'https://1337xx.to/search/' . $Arg . '/' . $b . '/';
+          
+				$link = 'https://1337xx.to/search/' . $Arg . '/1/';
 				$jsonData = file_get_contents($link);
 				$dom = new DOMDocument;
 				$dom->loadHTML($jsonData);
@@ -55,7 +35,6 @@ if (isset($_GET['name']) && !empty($_GET['name']))
 							array_push($All, array(
 								'link' => $links->getAttribute("href") ,
 								"name" => $a->nodeValue,
-								"picture" => searchPicture($name)
 							));
 							}
 						}
