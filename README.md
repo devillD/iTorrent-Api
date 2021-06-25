@@ -1,2 +1,2 @@
 # iTorrent-Api
-itorrent api in php
+https://yourbaseurl/?name=something
