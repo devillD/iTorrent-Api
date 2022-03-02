@@ -33,8 +33,8 @@ if (isset($_GET['name']) && !empty($_GET['name']))
 							$dom2->loadHTML($jsonData);
 							$links = $dom2->getElementsByTagName('ul')->item(5)->getElementsByTagName('a')->item(0);
 							array_push($All, array(
-								'link' => $links->getAttribute("href") ,
-								"name" => $a->nodeValue,
+								'Magnet' => $links->getAttribute("href") ,
+								"Name" => $a->nodeValue,
 							));
 							}
 						}
